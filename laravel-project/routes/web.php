@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $info = [
+       'nome' => 'Price',
+        'cognome' => 'Rossi',
+        'amici' => ['Jon', 'Gianni']
+    ];
+    return view('home', $info);
+});
+
+Route::get('/chi-siamo',function (){
+    return view('about');
 });
